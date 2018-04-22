@@ -52,36 +52,32 @@ $(document).ready(function () {
         url: "http://localhost:1709/Master/Country",
         success: function (data, textStatus, xhr) {
             var strDiv = '';
+     
             for (var i = 0; i < data.length; i++) {
-                strDiv = strDiv + "<tr class='btnEdit' role='row'><td class='sorting_1'> <a>" + data[i].CN_NAME_ENG + "</a></td><td style='display:none;'>" + data[i].CN_ID + "</td><td>" + data[i].CN_CURRENCY_ENG + "</td><td style='display:none;'>" + data[i].CN_CURR_ID + "</td></tr>";
+                strDiv = strDiv + "<tr class='btnEdit' role='row'><td class='sorting_1'> <a>" + data[i].CN_NAME_ENG + "</a></td><td style='display: none;' disabled>" + data[i].CN_ID + "</td><td class='unselectable'>" + data[i].CN_CURRENCY_ENG + "</td><td  class='tdhide'>" + data[i].CN_CURR_ID + "</td></tr>";
             }
             $("#dataTables-example").append("<tbody>");
             $("#dataTables-example").append(strDiv);
             $("#dataTables-example").append("</tbody>");
 
-            $(".btnEdit").bind("click", Edit);
-        }}); 
+            
+        }
+    });
+   
+
+    $('#dataTables-example tr').click(function () {
+        var tableData = $(this).children("td").map(function () {
+            return $(this).text();
+        }).get();
+        let countryText = $.trim(tableData[0]);
+        let CurrencyVal = $.trim(tableData[3]);
+        $(txtCountry).val(countryText);
+        $("#optCurrency").val(CurrencyVal);
+       
+    });
+  
 });
 
-function Edit() {  
-    $('#txtCountry').val("HI");  
-     //tdName.html("<input type='text' id='txtName' value='" + tdName.html() + "'/>");        
-     //tdPhone.html("<input type='text' id='txtPhone' value='" + tdPhone.html() + "'/>");
-     //tdEmail.html("<input type='text' id='txtEmail' value='" + tdEmail.html() + "'/>"); 
-     //tdButtons.html("<img src='images/disk.png' class='btnSave'/>");
-    // $(".btnSave").bind("click", Save);
-     //$(".btnEdit").bind("click", Edit);
-    // $(".btnDelete").bind("click", Delete);
-};
-
-
-$(function () {
-    $(".btnEdit").bind("click", Edit);
-   
-});
-
-    
-   
 function pageScroll() {
     var objDiv = document.getElementById("contain");
     objDiv.scrollTop = objDiv.scrollTop + 1;

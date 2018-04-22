@@ -6754,4 +6754,11 @@ button.close {
     display: none !important;
   }
 }
+.unselectable {
+    cursor:none;
+}
+
+.tdhide {
+    display: none;
+}
 /*# sourceMappingURL=bootstrap.css.map */

@@ -8,6 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <script src="../RateBoardScripts/rate.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet"/>
     <h1 class="page-header">COUNTRY</h1>
     <div class="panel-body">
         <div class="row">
