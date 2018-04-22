@@ -13,8 +13,6 @@
         <div class="row">
             <div class="col-lg-6">
                 <form role="form">
-
-
                     <div class="form-group">
                         <label>Country Name</label>
                         <input class="form-control" id="txtCountry" placeholder="Enter Country Name" />
@@ -25,7 +23,7 @@
                             <option value="0">Select</option>
                             <option value="1">Indian Rupee</option>
                             <option value="2">Qatari Riyal</option>
-                            <option value="3">Srilankan rupee</option>
+                            <option value="3">UAE Dirham</option>
                             <option value="4">Us Dollar</option>
                             <option value="5">Euro</option>
                         </select>
