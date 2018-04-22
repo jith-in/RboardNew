@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label>Currency</label>
-                        <select class="form-control">
+                        <select class="form-control" id="optCurrency">
                             <option value="0">Select</option>
                             <option value="1">Indian Rupee</option>
                             <option value="2">Qatari Riyal</option>
@@ -34,7 +34,7 @@
                     </div>
 
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" onclick="AddCountry()" class="btn btn-primary">Submit</button>
                     <button type="reset" class="btn btn-primary">Reset</button>
                 </form>
             </div>
