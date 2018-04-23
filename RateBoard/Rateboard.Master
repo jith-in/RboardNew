@@ -279,7 +279,7 @@
                                 <li>
                                     <a href="../Master/CurrencyMaster.aspx">Currency</a>
                                 </li>
-                                <li>
+                               <%-- <li>
                                     <a href="notifications.html">Notifications</a>
                                 </li>
                                 <li>
@@ -290,18 +290,18 @@
                                 </li>
                                 <li>
                                     <a href="grid.html">Grid</a>
-                                </li>
+                                </li>--%>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Rate Settings<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="#">Rate </a>
                                 </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
+                                <%--<li>
+                                    <a href="#">Branch </a>
                                 </li>
                                 <li>
                                     <a href="#">Third Level <span class="fa arrow"></span></a>
@@ -319,13 +319,13 @@
                                             <a href="#">Third Level Item</a>
                                         </li>
                                     </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
+                            
+                                </li>--%>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Rate Board<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="blank.html">Blank Page</a>

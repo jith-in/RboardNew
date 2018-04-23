@@ -78,6 +78,56 @@ $(document).ready(function () {
   
 });
 
+
+function AddCurrency() {
+    var mstCurrency = $('#txtCurrency').val();
+    var data = { CR_NAME_ENG: mstCurrency };
+    var ObjCurrency = JSON.stringify(data);
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:1709/Master/Currency",
+        data: ObjCurrency,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            window.location.pathname = "Master/CurrencyMaster.aspx";
+        },
+        error: function (result) {
+
+        }
+    });
+}
+$(document).ready(function () {
+    $("#dataTables-currency").append("<thead><tr role='row'><th  tabindex='0' aria-controls='dataTables-currency' rowspan='1' colspan='1'  aria-label='Currency' style='width: 170px;'>Currency</th></tr> </thead>");
+    $.ajax({
+        type: "GET",
+        async: false,
+        url: "http://localhost:1709/Master/Currency",
+        success: function (data, textStatus, xhr) {
+            var strDiv = '';
+
+            for (var i = 0; i < data.length; i++) {
+                strDiv = strDiv + "<tr class='btnEdit' role='row'><td class='sorting_1'> <a>" + data[i].CR_NAME_ENG + "</a></td><td style='display: none;' disabled>" + data[i].CR_ID + "</td></tr>";
+            }
+            $("#dataTables-currency").append("<tbody>");
+            $("#dataTables-currency").append(strDiv);
+            $("#dataTables-currency").append("</tbody>");
+
+
+        }
+    });
+
+
+    $('#dataTables-currency tr').click(function () {
+        var tableData = $(this).children("td").map(function () {
+            return $(this).text();
+        }).get();
+        let currencyText = $.trim(tableData[0]);
+        $(txtCurrency).val(currencyText);
+
+    });
+
+});
 function pageScroll() {
     var objDiv = document.getElementById("contain");
     objDiv.scrollTop = objDiv.scrollTop + 1;
